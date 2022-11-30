@@ -3,24 +3,28 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // YOUR CODE GOES HERE// 
-  var isUppercase = false;
-  var isLowercase = false;
-  var isSpecial = false;
-  var isNumber = false;
+  var isSpecial = confirm('Would you like to use any special symbols or characters?');
+  var isNumber = confirm('Would you like to use any numbers?');
+  var isUppercase = confirm('Would you like to use UPPERCASE letters?');
+  var isLowercase = confirm('Would you like to use lowercase letter?');
 
   if (isUppercase) {
     // Use uppercase letters
+    console.log('uppercase');
   }
 
   if (isLowercase) {
+    console.log('lowercase');
     // use lowercase letters
   }
 
   if (isSpecial) {
+    console.log('special');
     // use Special symbols
   }
 
-  if(isNumbers) {
+  if(isNumber) {
+    console.log('numbers');
     // use numbers
   }
 
