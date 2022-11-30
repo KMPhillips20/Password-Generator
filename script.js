@@ -7,6 +7,26 @@ function generatePassword() {
   var isLowercase = false;
   var isSpecial = false;
   var isNumber = false;
+
+  if (isUppercase) {
+    // Use uppercase letters
+  }
+
+  if (isLowercase) {
+    // use lowercase letters
+  }
+
+  if (isSpecial) {
+    // use Special symbols
+  }
+
+  if(isNumbers) {
+    // use numbers
+  }
+
+
+
+
   
  return;
 }
