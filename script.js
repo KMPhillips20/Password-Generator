@@ -3,43 +3,44 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // YOUR CODE GOES HERE// 
-  var lowerletters = 'abcdefghijklmnopqrstuvwxyz';
+  var lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
   var upperLetters= letters.toUpperCase();
-  var symbols = '"!#$%&()*+,-./:;<=>?@[\]^_`{|}~';
-  var numbers = '0123456789';
+  var symbols = '"!#$%&()*+,-./:;<=>?@[]^_`{|}~';
+  var wholeNumbers = '0123456789';
+  var bank = "";
 
+  var passwordLength = prompt(' How long do you want your password to be?')
   var isSpecial = confirm('Would you like to use any special symbols or characters?');
   var isNumber = confirm('Would you like to use any numbers?');
   var isUppercase = confirm('Would you like to use UPPERCASE letters?');
   var isLowercase = confirm('Would you like to use lowercase letter?');
-
-
+  
+  
+  if (isLowercase) {
+    bank.concat(lowerLetters);
+    // use lowercase letters
+  }
+  
   if (isUppercase) {
     // Use uppercase letters
-    console.log('uppercase');
-  }
-
-  if (isLowercase) {
-    console.log('lowercase');
-    // use lowercase letters
+   bank.concat(upperLetters);
   }
 
   if (isSpecial) {
-    console.log('special');
+    bank.concat(symbols);
     // use Special symbols
   }
 
   if(isNumber) {
-    console.log('numbers');
+    bank.concat(wholeNumbers);
     // use numbers
   }
-
-
-
-
-  
- return;
+  console.log(bank);
+     return "";
 }
+//   grab random letters
+
+
 
 // Write password to the #password input
 function writePassword() {
