@@ -8,8 +8,16 @@ function generatePassword() {
   var symbols = '"!#$%&()*+,-./:;<=>?@[]^_`{|}~';
   var wholeNumbers = '0123456789';
   var bank = "";
+  var thePasswordLength = prompt('Please choose between 8 and 128 characters for your Password.')
 
-  var passwordLength = prompt(' How long do you want your password to be?')
+  for (thePasswordLength;thePasswordLength <8 || thePasswordLength>128;) {
+    alert(' You need to select a valid Password Length!');
+    var thePasswordLength = prompt('Please choose between 8 and 128 characters for your Password.')
+  }
+
+
+
+
   var isSpecial = confirm('Would you like to use any special symbols or characters?');
   var isNumber = confirm('Would you like to use any numbers?');
   var isUppercase = confirm('Would you like to use UPPERCASE letters?');
@@ -17,8 +25,8 @@ function generatePassword() {
   
   
   if (isLowercase) {
+      // use lowercase letters
     bank.concat(lowerLetters);
-    // use lowercase letters
   }
   
   if (isUppercase) {
