@@ -8,51 +8,74 @@ function generatePassword() {
   var symbols = '"!#$%&()*+,-./:;<=>?@[]^_`{|}~';
   var wholeNumbers = '0123456789';
   var bank = "";
-  var thePasswordLength = prompt('Please choose between 8 and 128 characters for your Password.')
+  var finalPassword = "";
+  
+  
 
-  for (thePasswordLength;thePasswordLength <8 || thePasswordLength>128;) {
-    alert(' You need to select a valid Password Length!');
-    var thePasswordLength = prompt('Please choose between 8 and 128 characters for your Password.')
+  var thePasswordLength = prompt('How many characters do you want in your password. Please choose between 8 and 128.');  
+
+  if (thePasswordLength < 8 || thePasswordLength > 128) {
+    return "Please choose a valid number of characters.";
+  } else if (isNaN(thePasswordLength)) {
+    thePasswordLength= prompt("Please enter a number between 8 and 128.");
   }
-
-
-
-
-  var isSpecial = confirm('Would you like to use any special symbols or characters?');
-  var isNumber = confirm('Would you like to use any numbers?');
-  var isUppercase = confirm('Would you like to use UPPERCASE letters?');
-  var isLowercase = confirm('Would you like to use lowercase letter?');
+  else {
+    alert("The password will be " + thePasswordLength + " characters long.");
+    
+  }
   
-  
-  if (isLowercase) {
+
+  var aSpecial = confirm('Would you like to use any special symbols or characters?');
+
+  var aNumber = confirm('Would you like to use any numbers?');
+
+  var aUppercase = confirm('Would you like to use UPPERCASE letters?');
+
+  var aLowercase = confirm('Would you like to use lowercase letter?'); 
+
+
+ 
+
+  if (aLowercase) {
       // use lowercase letters
-    bank.concat(lowerLetters);
+      bank = bank.concat(lowerLetters);
+    }
+    
+  if (aUppercase) {
+    // Use uppercase letters
+    bank = bank.concat(upperLetters);
+}
+
+if (aSpecial) {
+    bank = bank.concat(symbols);
+    // use Special symbols "!#$%&()*+,-./:;<=>?@[]^_`{|}~'
   }
   
-  if (isUppercase) {
-    // Use uppercase letters
-   bank.concat(upperLetters);
-  }
+  if(aNumber) {
+      bank = bank.concat(wholeNumbers);
+      // use numbers 0123456789
+    }
 
-  if (isSpecial) {
-    bank.concat(symbols);
-    // use Special symbols
-  }
-
-  if(isNumber) {
-    bank.concat(wholeNumbers);
-    // use numbers
-  }
-  console.log(bank);
-     return "";
+    var finalPassword = ""
+    for (var i = 0; i < thePasswordLength; i++) {
+      var random =[Math.floor(Math.random() * thePasswordLength.length)];
+       finalPassword = bank + thePasswordLength[random];
+    }
+    
+  
+    // console.log(bank);
+    return finalPassword;
 }
-//   grab random letters
+    
 
+
+
+   
 
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword()
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
