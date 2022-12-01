@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   // YOUR CODE GOES HERE// 
   var lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
-  var upperLetters= letters.toUpperCase();
+  var upperLetters= lowerLetters.toUpperCase();
   var symbols = '"!#$%&()*+,-./:;<=>?@[]^_`{|}~';
   var wholeNumbers = '0123456789';
   var bank = "";
