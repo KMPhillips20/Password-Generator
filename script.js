@@ -59,7 +59,6 @@ if (aSpecial) {
   if (aLowercase || aUppercase || aSpecial || aNumber) {
     for (var i = 0; i < thePasswordLength; i++) {
       var random =[Math.floor(Math.random() * bank.length)];
-      console.log(random, bank[random]);
        finalPassword += bank[random];
     }
     return finalPassword; 
