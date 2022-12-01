@@ -56,15 +56,19 @@ if (aSpecial) {
       // use numbers 0123456789
     }
 
-    var finalPassword = ""
+  if (aLowercase || aUppercase || aSpecial || aNumber) {
     for (var i = 0; i < thePasswordLength; i++) {
-      var random =[Math.floor(Math.random() * thePasswordLength.length)];
-       finalPassword = bank + thePasswordLength[random];
+      var random =[Math.floor(Math.random() * bank.length)];
+      console.log(random, bank[random]);
+       finalPassword += bank[random];
     }
-    
+    return finalPassword; 
+  } else { 
+    alert('You must choose to use at least one option');
+    return "";
+  }
   
-    // console.log(bank);
-    return finalPassword;
+    return "";
 }
     
 
