@@ -68,7 +68,6 @@ if (aSpecial) {
     return "";
   }
   
-    return "";
 }
     
 
